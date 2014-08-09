@@ -1,5 +1,3 @@
-// Copyright (c) Jefferey Ostapchuk 2014
-
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Hashtable;
