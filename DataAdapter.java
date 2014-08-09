@@ -1,5 +1,4 @@
 // Copyright (c) Jefferey Ostapchuk 2014
-package com.nuebkitsune.fuelmeter.model;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -14,15 +13,14 @@ import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.text.TextUtils;
 
-import com.nuebkitsune.fuelmeter.classes.KeyValuePair;
-import com.nuebkitsune.fuelmeter.helper.DatabaseHelper;
-import com.nuebkitsune.fuelmeter.interfaces.IDatabaseHelperListener;
+import classes.KeyValuePair;
+import helper.DatabaseHelper;
+import interfaces.IDatabaseHelperListener;
 
 public abstract class DataAdapter implements IDatabaseHelperListener {
 	protected DatabaseHelper db;
 
 	protected String TABLE_NAME = "";
-//	protected Map<String, String> TABLE_COLUMNS = new HashMap<String, String>();
 	protected List<KeyValuePair> TABLE_COLUMNS = new ArrayList<KeyValuePair>();
 	
 	public static final String COLUMN_ID = "_id";
@@ -206,29 +204,7 @@ public abstract class DataAdapter implements IDatabaseHelperListener {
 		this.db = dbh;
 		this.db.addListener(this);
 	}
-//	public String[] getColumnNames() {
-//		List<String> names = new ArrayList<String>();
-//		
-//		for (Map.Entry<String, String> column : TABLE_COLUMS.entrySet())
-//			names.add(column.getKey());
-//					
-//		
-//		return (String[])names.toArray();
-//	}
-//	
-//	public String getColumnName(Integer columnIndex) {
-//		return getColumnNames()[columnIndex];
-//	}
-//	
-//	public Integer getColumnIndex(String columnName) {
-//		String[] columns = getColumnNames();
-//		for (int x = 0; x < columns.length; x++)
-//			if (columns[x] == columnName)
-//				return x;
-//		
-//		return -1;
-//	}
-	
+
 	public String getTableName() {
 		return TABLE_NAME;
 	}
